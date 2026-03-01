@@ -1,0 +1,445 @@
+/* ... */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #222;
+  color: #725de6;
+}
+
+.crud {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+.head {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 10px 0;
+  color: blue;
+}
+
+input {
+  width: 100%;
+  height: 30px;
+  outline: none;
+  border: none;
+  background: #2e2e84;
+  margin: 6px 0;
+  border-radius: 5px;
+  padding: 5px;
+  color: rgb(20, 8, 18);
+}
+input:focus {
+  border: 2px solid #725de6;
+  background: #f0f1f5;
+  transform: scale(1);
+}
+.pric input {
+  width: 10%;
+}
+.pric {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4.5vh;
+}
+
+/* display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4.5vh; */
+
+#total {
+  background: #421313;
+  padding: 6px 3px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+#total::before {
+  content: "Total :";
+}
+
+button {
+  width: 100%;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  background: #3006e8;
+  color: wheat;
+  border-radius: 20px;
+  transition: 0.5s;
+  margin: 5px 0;
+}
+
+button:hover {
+  background: #873db6;
+  letter-spacing: 1px;
+  color: #725de6;
+}
+
+.btnSearch {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btnSearch button {
+  width: 45%;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+  margin: 10px 0;
+}
+
+table th {
+  text-transform: uppercase;
+  background: #2e2e84;
+  padding: 10px;
+}
+
+th,
+td {
+  padding: 5px;
+}
+
+#tbody button {
+  width: auto;
+  height: 25px;
+  padding: 0 10px;
+  margin: 2px;
+}
+#DeleteAll button {
+  position: relative;
+  border: none;
+  background: #cc2b2b;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 0;
+}
+
+#DeleteAll button::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 8px;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    #f06868 20%,
+    transparent 40%
+  );
+  z-index: -2;
+  opacity: 3;
+  animation: none;
+}
+
+#DeleteAll button::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: inherit;
+  border-radius: 5px;
+  z-index: -1;
+}
+
+#DeleteAll button:hover::before {
+  opacity: 3;
+  animation: spin-border 1s linear infinite;
+}
+
+@keyframes spin-border {
+  to {
+    transform: perspective(360deg);
+  }
+}
+/* #DeleteAll button {
+  width: 100%;
+  background: #e83030;
+}
+#DeleteAll button:hover {
+  border: 2px solid #653939;
+} */
+@media screen and (min-width: 1201px) {
+  .crud {
+    max-width: 1000px;
+  }
+
+  .head h2 {
+    font-size: 2.5rem;
+  }
+
+  input {
+    height: 45px;
+    font-size: 16px;
+  }
+
+  button {
+    height: 45px;
+    font-size: 18px;
+  }
+
+  table th,
+  table td {
+    font-size: 14px;
+    padding: 15px 10px;
+  }
+}
+
+/* Desktop / Laptop - screens between 1024px and 1200px */
+@media screen and (max-width: 1200px) {
+  .crud {
+    width: 85%;
+  }
+}
+
+/* Tablet Landscape - screens between 768px and 1024px */
+@media screen and (max-width: 1024px) {
+  .crud {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .head h2 {
+    font-size: 1.8rem;
+  }
+
+  .pric input {
+    width: 45%;
+  }
+
+  .btnSearch {
+    flex-direction: column;
+  }
+
+  .btnSearch button {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
+
+/* Tablet Portrait / iPad - screens between 600px and 768px */
+@media screen and (max-width: 768px) {
+  .crud {
+    width: 95%;
+    padding: 10px;
+  }
+
+  .head h2 {
+    font-size: 1.5rem;
+  }
+
+  .head p {
+    font-size: 0.85rem;
+  }
+
+  .pric {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .pric input {
+    width: 48%;
+  }
+
+  #total {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  input {
+    height: 40px;
+    font-size: 14px;
+  }
+
+  button {
+    height: 40px;
+    font-size: 14px;
+  }
+
+  table {
+    font-size: 12px;
+  }
+
+  table th {
+    padding: 8px 5px;
+    font-size: 11px;
+  }
+
+  th,
+  td {
+    padding: 8px 3px;
+    font-size: 11px;
+  }
+}
+
+/* Mobile Landscape - screens between 480px and 600px */
+@media screen and (max-width: 600px) {
+  .crud {
+    width: 95%;
+    margin: 10px auto;
+    padding: 8px;
+  }
+
+  .head {
+    margin: 15px 0;
+  }
+
+  .head h2 {
+    font-size: 1.3rem;
+  }
+
+  .head p {
+    font-size: 0.75rem;
+  }
+
+  .pric {
+    flex-direction: column;
+  }
+
+  .pric input {
+    width: 100%;
+  }
+
+  #total {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  input {
+    height: 42px;
+    font-size: 14px;
+  }
+
+  button {
+    height: 42px;
+    font-size: 14px;
+  }
+
+  .btnSearch button {
+    width: 100%;
+    font-size: 11px;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    min-width: 500px;
+  }
+
+  table th {
+    font-size: 10px;
+    padding: 10px 5px;
+  }
+
+  th,
+  td {
+    font-size: 10px;
+    padding: 8px 3px;
+  }
+
+  #tbody button {
+    height: 28px;
+    font-size: 9px;
+    padding: 0 5px;
+  }
+}
+
+/* Mobile Portrait - screens between 320px and 480px */
+@media screen and (max-width: 480px) {
+  .crud {
+    width: 98%;
+    margin: 5px auto;
+    padding: 5px;
+  }
+
+  .head h2 {
+    font-size: 1.1rem;
+  }
+
+  .head p {
+    font-size: 0.7rem;
+  }
+
+  input {
+    height: 40px;
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  button {
+    height: 40px;
+    font-size: 13px;
+  }
+
+  #total {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .btnSearch button {
+    font-size: 10px;
+    height: 35px;
+  }
+
+  table th,
+  table td {
+    font-size: 9px;
+    padding: 6px 2px;
+  }
+
+  #tbody button {
+    height: 25px;
+    font-size: 8px;
+    padding: 0 3px;
+  }
+}
+
+/* Extra Small Devices - screens less than 320px */
+@media screen and (max-width: 320px) {
+  .crud {
+    width: 100%;
+    padding: 5px;
+  }
+
+  .head h2 {
+    font-size: 1rem;
+  }
+
+  .head p {
+    font-size: 0.65rem;
+  }
+
+  input {
+    height: 38px;
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  button {
+    height: 38px;
+    font-size: 12px;
+  }
+
+  #total {
+    font-size: 12px;
+  }
+
+  table {
+    min-width: 280px;
+  }
+}
