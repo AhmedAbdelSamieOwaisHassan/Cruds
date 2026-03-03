@@ -1,5 +1,38 @@
 /* ... */
+html {
+  scroll-behavior: smooth;
+  container-type: scroll-state;
+  container-name: page;
+}
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #3006e8;
+  color: wheat;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
 
+  opacity: 0;
+  translate: 0 50px;
+  transition: all 0.3s ease;
+  /* opacity 0.3s ease, */
+  transform: 0.3s ease;
+  pointer-events: none;
+}
+@container page scroll-state(scrollable:top) {
+  .back-to-top {
+    opacity: 1;
+    translate: 0 0;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
+.back-to-top:hover {
+  opacity: 1;
+  transform: translateY(-5px);
+}
 * {
   margin: 0;
   padding: 0;
